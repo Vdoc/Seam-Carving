@@ -136,3 +136,20 @@ fun BufferedImage.addVerticalSeam(): BufferedImage {
 
     return outputImage
 }
+
+private fun BufferedImage.transpose(): BufferedImage {
+    val outputImage = createImage(height, width)
+
+    for (y in 0 until height) {
+        for (x in 0 until width) {
+            val inputPixel = getRGB(x, y)
+            val inputColor = Color(inputPixel, true)
+            outputImage.setRGB(y, x, inputColor.rgb)
+        }
+    }
+
+    return outputImage
+}
+
+fun BufferedImage.addHorizontalSeam(): BufferedImage =
+        this.transpose().addVerticalSeam().transpose()

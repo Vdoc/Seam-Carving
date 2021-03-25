@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
     }
 
     try {
-        Converter.convert(inputFileName, outputFileName, TransformationType.ADD_VERTICAL_SEAM)
+        Converter.convert(inputFileName, outputFileName, TransformationType.ADD_HORIZONTAL_SEAM)
     } catch (exception: Exception) {
         exception.printStackTrace()
     }

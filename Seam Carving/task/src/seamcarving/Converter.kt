@@ -15,6 +15,7 @@ object Converter {
             TransformationType.NEGATIVE -> BufferedImage::negative
             TransformationType.ENERGY -> BufferedImage::energy
             TransformationType.ADD_VERTICAL_SEAM -> BufferedImage::addVerticalSeam
+            TransformationType.ADD_HORIZONTAL_SEAM -> BufferedImage::addHorizontalSeam
         }
 
         process(inputFileName, outputFileName, transformation)
